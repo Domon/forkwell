@@ -1,7 +1,7 @@
 # coding: utf-8
 class SkilltagsController < ApplicationController
   def show
-    @skilltag = Skilltag.find_by_name params[:name]
+    @skilltag = Skilltag.find params[:id]
     raise ActiveRecord::RecordNotFound if @skilltag.nil?
   end
 

@@ -13,7 +13,7 @@
   %nav
     %ul
       %li= '書いたもの'
-      %li= link_to 'ユーザー', tagged_users_path(name: @skilltag.name)
+      %li= link_to 'ユーザー', skilltag_users_path(@skilltag)
 
 .body
   - @skilltag.publications.each do |pub|
@@ -23,4 +23,4 @@
           %h2= link_to pub.title, pub
         %ul
           - pub.skilltags.each do |skilltag|
-            %li= link_to skilltag.name, skilltag_path(name: skilltag.name)
+            %li= link_to skilltag.name, skilltag_path(skilltag)

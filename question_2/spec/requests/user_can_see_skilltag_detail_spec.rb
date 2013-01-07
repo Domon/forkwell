@@ -12,7 +12,7 @@ feature 'ユーザーとして、スキルタグの詳細情報を閲覧でき�
   end
 
   scenario 'スキルタグの詳細ページで、スキルタグに関連する書いたものの一覧を閲覧できること' do
-    visit skilltag_path(name: ruby.name)
+    visit skilltag_path(ruby)
 
     ruby.publications.each do |pub|
       page.should have_content pub.title
@@ -21,7 +21,7 @@ feature 'ユーザーとして、スキルタグの詳細情報を閲覧でき�
   end
 
   scenario 'スキルタグの詳細ページで、スキルタグを自分に登録しているユーザーの一覧を閲覧できること' do
-    visit skilltag_path(name: ruby.name)
+    visit skilltag_path(ruby)
     click_link 'ユーザー'
 
     ruby.users.each do |user|
