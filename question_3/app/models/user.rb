@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :username
+  include ActiveModel::ForbiddenAttributesProtection
 
   has_many :company_users
   has_many :companies, through: :company_users
